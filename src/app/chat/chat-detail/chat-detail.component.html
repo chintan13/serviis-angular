@@ -1,0 +1,10 @@
+<div class="chat-message left" *ngFor="let message of chatMessages" [class.left]="message.type === 'received'" [class.right]="message.type === 'sent'">
+    <img class="message-avatar" [src]="message.avatar" alt="">
+    <div class="message">
+        <a class="message-author" href="javascript:void(0)"> {{message.Name}} </a>
+        <span class="message-date"> {{message.date}} </span>
+        <span class="message-content">
+            {{message.message}}
+        </span>
+    </div>
+</div>

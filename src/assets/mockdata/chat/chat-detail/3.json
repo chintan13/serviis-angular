@@ -1,0 +1,29 @@
+[{
+        "id": "1",
+        "type": "received",
+        "message": "Hii",
+        "avatar": "/assets/images/a3.jpg",
+        "date": "Mar 21 11:40 PM"
+    },
+    {
+        "id": "2",
+        "type": "received",
+        "message": "Hello",
+        "avatar": "/assets/images/a3.jpg",
+        "date": "Mar 21 11:40 PM"
+    },
+    {
+        "id": "3",
+        "type": "received",
+        "message": "What about party!",
+        "avatar": "/assets/images/a3.jpg",
+        "date": "Mar 21 11:40 PM"
+    },
+    {
+        "id": "4",
+        "type": "sent",
+        "message": "Hey not again :(",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Mar 21 11:40 PM"
+    }
+]

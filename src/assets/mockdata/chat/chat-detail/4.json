@@ -1,0 +1,36 @@
+[{
+        "id": "1",
+        "type": "received",
+        "message": "Hello",
+        "avatar": "/assets/images/a4.jpg",
+        "date": "Feb 27 09:00 AM"
+    },
+    {
+        "id": "2",
+        "type": "received",
+        "message": "Hii",
+        "avatar": "/assets/images/a4.jpg",
+        "date": "Feb 27 09:00 AM"
+    },
+    {
+        "id": "3",
+        "type": "sent",
+        "message": "Hello",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Feb 27 09:00 AM"
+    },
+    {
+        "id": "4",
+        "type": "received",
+        "message": "All the best for exams.",
+        "avatar": "/assets/images/a4.jpg",
+        "date": "Feb 27 09:01 AM"
+    },
+    {
+        "id": "5",
+        "type": "sent",
+        "message": "Thank you",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Feb 27 09:01 AM"
+    }
+]

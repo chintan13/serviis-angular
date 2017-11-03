@@ -1,0 +1,36 @@
+[{
+        "id": "1",
+        "type": "sent",
+        "message": "Hello",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Feb 12 03:07 PM"
+    },
+    {
+        "id": "2",
+        "type": "received",
+        "message": "Hii",
+        "avatar": "/assets/images/a5.jpg",
+        "date": "Feb 12 03:08 PM"
+    },
+    {
+        "id": "3",
+        "type": "sent",
+        "message": "Why didn't you come office?",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Feb 12 03:08 PM"
+    },
+    {
+        "id": "4",
+        "type": "sent",
+        "message": "Are you okay??",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Feb 12 03:08 PM"
+    },
+    {
+        "id": "5",
+        "type": "received",
+        "message": "Yaah.. I am fine. I Wiil talk you later.",
+        "avatar": "/assets/images/a5.jpg",
+        "date": "Feb 12 03:09 PM"
+    }
+]

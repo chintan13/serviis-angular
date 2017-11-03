@@ -1,0 +1,50 @@
+[{
+        "id": "1",
+        "type": "received",
+        "message": "Did you get the news ??",
+        "avatar": "/assets/images/a2.jpg",
+        "date": "Mar 21 12:20 PM"
+    },
+    {
+        "id": "2",
+        "type": "received",
+        "message": "Hello ... Are you there ??",
+        "avatar": "/assets/images/a2.jpg",
+        "date": "Mar 21 12:20 PM"
+    },
+    {
+        "id": "3",
+        "type": "sent",
+        "message": "Yaah! I read the news about it.",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Mar 21 12:20 PM"
+    },
+    {
+        "id": "4",
+        "type": "sent",
+        "message": "Do you know the reason behind this?",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Mar 21 12:21 PM"
+    },
+    {
+        "id": "5",
+        "type": "received",
+        "message": "Actually no.",
+        "avatar": "/assets/images/a2.jpg",
+        "date": "Mar 21 12:21 PM"
+    },
+    {
+        "id": "6",
+        "type": "received",
+        "message": "Even I had read it today morning",
+        "avatar": "/assets/images/a2.jpg",
+        "date": "Mar 21 12:21 PM"
+    },
+    {
+        "id": "7",
+        "type": "sent",
+        "message": "Ohh I see.",
+        "avatar": "/assets/images/a6.jpg",
+        "date": "Mar 21 12:25 PM"
+    }
+]
