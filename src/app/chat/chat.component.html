@@ -48,7 +48,9 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
 
-                    <strong>Chat room </strong> can be used to create chat room in your app. You can also use a small chat in the right corner to provide live discussion.
+                    <strong>Chat room </strong> can be used to create chat
+                    room in your app. You can also use a small chat in
+                    the right corner to provide live discussion.
 
                 </div>
             </div>
@@ -60,7 +62,7 @@
             <div class="ibox chat-view">
 
                 <div class="ibox-title">
-                    <small class="pull-right text-muted">Last message:  Mon Jan 26 2015 - 18:39:23</small> Chat room panel
+                    <small class="pull-right text-muted">Last message:  Mon Jan 26 2015 - 18:39:23</small>                    Chat room panel
                 </div>
 
                 <div class="ibox-content">
@@ -70,7 +72,8 @@
                             <div class="chat-users">
 
                                 <div class="users-list">
-                                    <div class="chat-user" *ngFor="let item of chatList" (click)="onClickDetail(item)" [class.selected]="selectedID === item.id">
+                                    <div class="chat-user" *ngFor="let item of chatList" (click)="onClickDetail(item)"
+                                        [class.selected]="selectedID === item.id">
                                         <img class="chat-avatar" [src]="item.avatar" alt="">
                                         <div class="chat-user-name">
                                             <a>{{item.Name}}</a>
@@ -83,24 +86,32 @@
                         </div>
 
                         <div class="col-md-9">
-                            <div class="chat-discussion">
-                                <router-outlet></router-outlet>
-                            </div>
-
+                            <router-outlet></router-outlet>
                         </div>
-
 
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <div class="chat-message-form">
+                        <div class="col">
+                            <form role="form" [formGroup]="chatForm" (ngSubmit)="onClickSendChat()">
+                                <div class="row chat-form-row">
+                                    <div class="col-lg-11 col-chat-txt">
+                                        <div class="chat-message-form">
+                                            <div class="form-group">
+                                                <textarea class="form-control message-input" name="message" placeholder="Enter message text"
+                                                    formControlName="chatMessage"
+                                                    (keypress)="keypressHandler($event)"
+                                                    [(ngModel)]="chatMessage"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <div class="form-group">
-
-                                    <textarea class="form-control message-input" name="message" placeholder="Enter message text"></textarea>
+                                    <div class="col-lg-1  col-chat-btn">
+                                        <button class="btn btn-primary chat-send-btn" type="submit" [disabled]='!chatForm.valid'>
+                                            <i class="fa fa-reply"></i>
+                                        </button>
+                                    </div>
                                 </div>
-
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
