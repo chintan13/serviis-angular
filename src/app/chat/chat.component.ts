@@ -5,6 +5,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { ChatService } from './chat.service';
 
+import { Observable } from 'rxjs/Observable';
+import { Chat } from './models/chat';
+import { Store } from '@ngrx/store';
+import { AppState } from './chat-reducer/chat.reducer';
 
 @Component({
     selector: 'app-chat',
@@ -13,7 +17,7 @@ import { ChatService } from './chat.service';
 })
 export class ChatComponent implements OnInit {
 
-    chatList: any;
+    chatList: Observable<Array<Chat>>;
     selectedID: any;
 
     chatForm: FormGroup;
@@ -24,8 +28,10 @@ export class ChatComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private formBuilder: FormBuilder,
-        private chatService: ChatService
+        private chatService: ChatService,
+        private store: Store<AppState>
     ) {
+        this.chatList = this.store.select<any>("chatListReducer");
         // this.route.params.subscribe(params => {
         //     console.log('route param: ', params);
         // });
@@ -46,7 +52,7 @@ export class ChatComponent implements OnInit {
         this.chatService.getChatList()
             .subscribe((result) => {
 
-                this.chatList = result;
+                // this.chatList = result;
                 console.log(this.chatList);
             }, (error: any) => {
                 console.log('ChatComponent : ' + error);

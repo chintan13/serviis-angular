@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Routes, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -9,13 +10,17 @@ import 'rxjs/add/operator/do';  // debug
 
 import { Subject } from 'rxjs/Subject';
 
+import { Store } from '@ngrx/store';
+import { AppState } from './chat-reducer/chat.reducer';
+import * as ChatActions from './chat-reducer/chat.action';
+
 
 @Injectable()
 export class ChatService {
 
     private chatSubject = new Subject<any>();
 
-    constructor(private httpFactory: Http, private router: Router) { }
+    constructor(private httpFactory: Http, private router: Router, private store: Store<AppState>) { }
 
     //   login(username: string, password: string) {
     getChatList() {
@@ -28,8 +33,11 @@ export class ChatService {
         return this.httpFactory.get('/assets/mockdata/chat/chat-list.json', options)
             .map((res: Response) => {
                 const body = res.json();
-                console.log('body ', body);
-                return body;
+                console.error('body ', body);
+
+                return this.store.dispatch(
+                    new ChatActions.AddToChatContactList(body)
+                );
 
             });
     }
@@ -45,7 +53,9 @@ export class ChatService {
             .map((res: Response) => {
                 const body = res.json();
                 console.log('body ', body);
-                return body;
+                return this.store.dispatch(
+                    new ChatActions.AddToChatDetailList(body)
+                );
             });
     }
 
@@ -57,8 +67,10 @@ export class ChatService {
             avatar: '/assets/images/a6.jpg',
             date: 'Mar 21 11:44 PM'
         };
-
-        this.chatSubject.next(msgJson);
+        return this.store.dispatch(
+            new ChatActions.AddMessageToChatDetailList(msgJson)
+        );
+        // this.chatSubject.next(msgJson);
     }
 
     getMessageObservable(): Observable<any> {

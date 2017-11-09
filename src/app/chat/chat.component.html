@@ -48,9 +48,7 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
 
-                    <strong>Chat room </strong> can be used to create chat
-                    room in your app. You can also use a small chat in
-                    the right corner to provide live discussion.
+                    <strong>Chat room </strong> can be used to create chat room in your app. You can also use a small chat in the right corner to provide live discussion.
 
                 </div>
             </div>
@@ -62,7 +60,7 @@
             <div class="ibox chat-view">
 
                 <div class="ibox-title">
-                    <small class="pull-right text-muted">Last message:  Mon Jan 26 2015 - 18:39:23</small>                    Chat room panel
+                    <small class="pull-right text-muted">Last message:  Mon Jan 26 2015 - 18:39:23</small> Chat room panel
                 </div>
 
                 <div class="ibox-content">
@@ -72,8 +70,7 @@
                             <div class="chat-users">
 
                                 <div class="users-list">
-                                    <div class="chat-user" *ngFor="let item of chatList" (click)="onClickDetail(item)"
-                                        [class.selected]="selectedID === item.id">
+                                    <div class="chat-user" *ngFor="let item of chatList | async" (click)="onClickDetail(item)" [class.selected]="selectedID === item.id">
                                         <img class="chat-avatar" [src]="item.avatar" alt="">
                                         <div class="chat-user-name">
                                             <a>{{item.Name}}</a>
@@ -97,10 +94,7 @@
                                     <div class="col-lg-11 col-chat-txt">
                                         <div class="chat-message-form">
                                             <div class="form-group">
-                                                <textarea class="form-control message-input" name="message" placeholder="Enter message text"
-                                                    formControlName="chatMessage"
-                                                    (keypress)="keypressHandler($event)"
-                                                    [(ngModel)]="chatMessage"></textarea>
+                                                <textarea class="form-control message-input" name="message" placeholder="Enter message text" formControlName="chatMessage" (keypress)="keypressHandler($event)" [(ngModel)]="chatMessage"></textarea>
                                             </div>
                                         </div>
                                     </div>

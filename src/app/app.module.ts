@@ -21,6 +21,9 @@ import { ChatComponent } from './chat/chat.component';
 import { ChatDetailComponent } from './chat/chat-detail/chat-detail.component';
 import { ChatService } from './chat/chat.service';
 
+import { Store, StoreModule } from '@ngrx/store';
+import { chatContactListReducer , chatDetailReducer } from './chat/chat-reducer/chat.reducer';
+
 
 @NgModule({
     declarations: [
@@ -41,6 +44,10 @@ import { ChatService } from './chat/chat.service';
         ReactiveFormsModule,
         RoutingModule,
         HttpModule,
+        StoreModule.forRoot({
+            chatListReducer  : chatContactListReducer,
+            chatDetailReducer : chatDetailReducer
+        }),
     ],
     providers: [
         AuthGuard,
